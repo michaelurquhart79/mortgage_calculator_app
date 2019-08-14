@@ -28,7 +28,7 @@ class MortgageForm extends Component {
       return
     }
 
-    this.props.onFormSubmit(userSalary,partnerSalary);
+    this.props.onFormSubmit(this.state);
 
     // this.setState({userSalary: 0, partnerSalary: 0})
   }
