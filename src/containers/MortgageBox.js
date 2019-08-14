@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import MortgageForm from '../components/MortgageForm';
 import MortgageResult from '../components/MortgageResult';
+import TitleBar from '../components/TitleBar';
 
 class MortgageBox extends Component {
   constructor(props){
@@ -22,7 +23,7 @@ class MortgageBox extends Component {
   render() {
     return (
       <div>
-        <h1>I'm the MortgageBox</h1>
+        <TitleBar titleBarText="Mortgage Calculator App"/>
         <MortgageForm onFormSubmit={this.handleFormSubmit}/>
         <MortgageResult mortgageAwarded={this.state.mortgageAwarded}/>
       </div>
