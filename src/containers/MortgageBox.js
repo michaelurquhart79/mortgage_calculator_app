@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import MortgageForm from '../components/MortgageForm';
+import MortgageResult from '../components/MortgageResult';
 
 class MortgageBox extends Component {
   constructor(props){
@@ -23,6 +24,7 @@ class MortgageBox extends Component {
       <div>
         <h1>I'm the MortgageBox</h1>
         <MortgageForm onFormSubmit={this.handleFormSubmit}/>
+        <MortgageResult />
       </div>
     )
   }
