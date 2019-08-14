@@ -10,14 +10,15 @@ class MortgageBox extends Component {
       userSalary: 0,
       partnerSalary: 0,
       mortgageAwarded: 0,
-      deposit: 0
+      deposit: 0,
+      monthlySpend: 0
     }
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
-  handleFormSubmit({userSalary, partnerSalary, deposit}){
+  handleFormSubmit({userSalary, partnerSalary, deposit, monthlySpend}){
     this.setState({userSalary: userSalary, partnerSalary: partnerSalary, deposit: deposit});
-    const result = ((userSalary + partnerSalary) * 3) + deposit;
+    const result = ((userSalary + partnerSalary - (12 * monthlySpend)) * 3) + deposit;
     this.setState({mortgageAwarded: result});
   }
 
