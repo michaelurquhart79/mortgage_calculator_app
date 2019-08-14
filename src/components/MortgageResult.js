@@ -4,7 +4,7 @@ const MortgageResult = (props) => {
   if (props.mortgageAwarded != 0) {
     return(
       <div>
-        <p>You can get a mortgage for £{props.mortgageAwarded}</p>
+        <p>The maximum you can spend on a house is £{props.mortgageAwarded}</p>
       </div>
     )
   } else {

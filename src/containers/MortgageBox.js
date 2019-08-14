@@ -9,21 +9,22 @@ class MortgageBox extends Component {
     this.state = {
       userSalary: 0,
       partnerSalary: 0,
-      mortgageAwarded: 0
+      mortgageAwarded: 0,
+      deposit: 0
     }
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
-  handleFormSubmit({userSalary, partnerSalary}){
-    this.setState({userSalary: userSalary, partnerSalary: partnerSalary});
-    const result = (userSalary + partnerSalary) * 3;
+  handleFormSubmit({userSalary, partnerSalary, deposit}){
+    this.setState({userSalary: userSalary, partnerSalary: partnerSalary, deposit: deposit});
+    const result = ((userSalary + partnerSalary) * 3) + deposit;
     this.setState({mortgageAwarded: result});
   }
 
   render() {
     return (
       <div>
-        <TitleBar titleBarText="Mortgage Calculator App"/>
+        <TitleBar titleBarText="House Affordability App"/>
         <MortgageForm onFormSubmit={this.handleFormSubmit}/>
         <MortgageResult mortgageAwarded={this.state.mortgageAwarded}/>
       </div>

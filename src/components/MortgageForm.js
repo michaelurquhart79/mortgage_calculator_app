@@ -5,10 +5,12 @@ class MortgageForm extends Component {
     super(props);
     this.state = {
       userSalary: 0,
-      partnerSalary: 0
+      partnerSalary: 0,
+      deposit: 0
     };
     this.handleUserSalaryChange = this.handleUserSalaryChange.bind(this);
     this.handlePartnerSalaryChange = this.handlePartnerSalaryChange.bind(this);
+    this.handleDepositChange = this.handleDepositChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -20,10 +22,13 @@ class MortgageForm extends Component {
     this.setState({partnerSalary: parseInt(event.target.value)});
   }
 
+  handleDepositChange(event) {
+    this.setState({deposit: parseInt(event.target.value)});
+  }
+
   handleSubmit(event) {
     event.preventDefault();
     const userSalary = this.state.userSalary;
-    const partnerSalary = this.state.partnerSalary;
     if(!userSalary) {
       return
     }
@@ -56,6 +61,14 @@ class MortgageForm extends Component {
             value={this.state.partnerSalary}
             onChange={this.handlePartnerSalaryChange}></input>
           <br/>
+          <label for="deposit">Enter Deposit Amount: </label>
+          <input
+            id="deposit"
+            min="0"
+            type="number"
+            placeholder="Deposit..."
+            value={this.state.deposit}
+            onChange={this.handleDepositChange}></input>
           <input type="submit" value="Calculate Mortgage"></input>
         </form>
       </div>
