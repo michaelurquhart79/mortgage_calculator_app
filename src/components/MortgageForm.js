@@ -30,26 +30,32 @@ class MortgageForm extends Component {
 
     this.props.onFormSubmit(userSalary,partnerSalary);
 
-    this.setState({userSalary: 0, partnerSalary: 0})
+    // this.setState({userSalary: 0, partnerSalary: 0})
   }
 
   render() {
     return (
       <div className="mortgage-form">
         <form className="mortgage-form" onSubmit={this.handleSubmit}>
+          <label for="user-salary">Your Salary:</label>
           <input
+            id="user-salary"
             min="0"
             type="number"
             placeholder="Your Salary"
             value={this.state.userSalary}
             onChange={this.handleUserSalaryChange}>
           </input>
+          <br/>
+          <label for="partner-salary">Your Partner's Salary:</label>
           <input
+            id="partner-salary"
             min="0"
             type="number"
             placeholder="Partners Salary"
             value={this.state.partnerSalary}
             onChange={this.handlePartnerSalaryChange}></input>
+          <br/>
           <input type="submit" value="Calculate Mortgage"></input>
         </form>
       </div>

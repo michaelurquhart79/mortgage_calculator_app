@@ -25,7 +25,7 @@ class MortgageBox extends Component {
       <div>
         <h1>I'm the MortgageBox</h1>
         <MortgageForm onFormSubmit={this.handleFormSubmit}/>
-        <MortgageResult />
+        <MortgageResult mortgageAwarded={this.state.mortgageAwarded}/>
       </div>
     )
   }

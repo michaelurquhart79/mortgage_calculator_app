@@ -1,11 +1,15 @@
 import React from 'react';
 
 const MortgageResult = (props) => {
-  return(
-    <div>
-      <p>This is the calculation result</p>
-    </div>
-  )
+  if (props.mortgageAwarded != 0) {
+    return(
+      <div>
+        <p>You can get a mortgage for £{props.mortgageAwarded}</p>
+      </div>
+    )
+  } else {
+    return null;
+  }
 }
 
 export default MortgageResult;
